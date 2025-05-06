@@ -4,6 +4,8 @@ resource "aws_appautoscaling_target" "taskoverflow" {
   resource_id        = "service/${aws_ecs_cluster.taskoverflow.name}/${aws_ecs_service.taskoverflow.name}"
   scalable_dimension = "ecs:service:DesiredCount"
   service_namespace  = "ecs"
+
+  depends_on = [ aws_ecs_service.taskoverflow ]
 }
 
 resource "aws_appautoscaling_policy" "taskoverflow_cpu" {

@@ -9,7 +9,7 @@ export const options = {
 };
 
 export default function () {
-  const res = http.get('http://taskoverflow-238658411.us-east-1.elb.amazonaws.com/api/v1/todos');
+  const res = http.get('http://taskoverflow-855388552.us-east-1.elb.amazonaws.com');
   check(res, { 'status was 200': (r) => r.status === 200 });
   sleep(1);
 }
